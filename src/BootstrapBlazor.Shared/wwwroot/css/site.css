@@ -2,10 +2,6 @@
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
 }
 
-body, .form-control {
-    font-size: 0.875rem;
-}
-
 a, a:hover {
     text-decoration: none;
 }
@@ -408,6 +404,8 @@ section {
         .pre-code .copy-code svg {
             transition: transform .3s linear;
             display: inline-block;
+            width: 14px;
+            height: 14px;
         }
 
         .pre-code .copy-code:hover svg {
@@ -441,6 +439,8 @@ section {
 }
 
 .layout .side {
+    display: flex;
+    height: 100%;
     background: #3ba0e9;
     color: #fff;
 }
@@ -509,6 +509,38 @@ section {
     background-color: #f5f7fa;
 }
 
+.split-demo {
+    height: 200px;
+    width: 240px;
+    border-color: rgba(0,0,0,.125);
+    border-radius: 4px;
+}
+
+.split-demo-horizontal {
+    height: 100px;
+}
+
+@media (min-width: 568px) {
+    .split-demo {
+        height: 200px;
+        width: 480px;
+    }
+
+    .split-demo-horizontal {
+        height: 100px;
+    }
+}
+
+@media (min-width: 576px) {
+    .content .form-inline .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .popover-input {
+        width: 100px;
+    }
+}
+
 @media (max-width: 767.98px) {
     .main .top-row:not(.auth) {
         display: none;
@@ -520,16 +552,6 @@ section {
 
     .main .top-row a, .main .top-row .btn-link {
         margin-left: 0;
-    }
-}
-
-@media (min-width: 576px) {
-    .content .form-inline .form-group {
-        margin-bottom: 1rem;
-    }
-
-    .popover-input {
-        width: 100px;
     }
 }
 
@@ -561,10 +583,10 @@ section {
         display: inline-block !important;
     }
 
-    .navbar {
+    header.navbar {
         position: sticky;
         top: 0;
-        z-index: 1035;
+        z-index: 5;
     }
 
     .section {

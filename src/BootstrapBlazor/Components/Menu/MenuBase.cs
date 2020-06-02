@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BootstrapBlazor.Components
 {
@@ -8,6 +10,11 @@ namespace BootstrapBlazor.Components
     /// </summary>
     public abstract class MenuBase : BootstrapComponentBase
     {
+        /// <summary>
+        /// 获得/设置 菜单组件 DOM 实例
+        /// </summary>
+        protected ElementReference MenuElement { get; set; }
+
         /// <summary>
         /// 获得 组件样式
         /// </summary>
@@ -34,5 +41,11 @@ namespace BootstrapBlazor.Components
         /// <value></value>
         [Parameter]
         public bool IsVertical { get; set; }
+
+        /// <summary>
+        /// 获得/设置 菜单项点击回调委托
+        /// </summary>
+        [Parameter]
+        public Func<MenuItem, Task> OnClick { get; set; } = _ => Task.CompletedTask;
     }
 }
